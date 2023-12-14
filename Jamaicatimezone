@@ -1,0 +1,7 @@
+#!/bin/bash
+# Set the time zone to jamaica
+export TZ="American/Jamaica"
+# Get the current time 
+current_time=$(date+"%T")
+# Display the time
+echo "Current time in jamaica: $current_time"
