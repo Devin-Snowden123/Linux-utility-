@@ -1,3 +1,4 @@
+#!/bin/bash
 //This is a sample script
 echo "Hello World"
 //To use this download it and issue the command chmod 777 filename
