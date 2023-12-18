@@ -1,1 +1,10 @@
-!
+#!/bin/hash/
+#This is a test script
+echo "Enter a numner"
+read a 
+echo "Enter a numner"
+read b
+var=$((a-b))
+echo $var
+#To use this you must download this file in "LINUX" through Github
+#In command prompt, at the $ prompt type:./filename
