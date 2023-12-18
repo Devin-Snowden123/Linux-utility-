@@ -22,6 +22,3 @@ for file in "$directory_path"/*; do
     fi
 done
 
-Replace "/path/to/your/directory" with the actual path to the directory you want to check. This script uses the `stat` command to get the last modification time of each file and compares it with the time one week ago.
-
-Save this script with a ".sh" extension, make it executable (`chmod +x script.sh`), and then execute it in the terminal. This script assumes you have the necessary permissions to read the files in the specified directory.
