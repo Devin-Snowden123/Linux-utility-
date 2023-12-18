@@ -1,20 +1,27 @@
-# Set the path to the database where file integrity information is stored
-$databasePath = "C:\Path\To\Your\Database.db"
+#!/bin/bash
 
-# Connect to the database (replace with your actual database connection logic)
-# For demonstration purposes, we'll use a hypothetical function called Connect-Database
-$databaseConnection = Connect-Database -Path $databasePath
+# Specify the directory path to check
+directory_path="/path/to/your/directory"
 
-# Get a list of files to check (replace this with your logic to retrieve file paths from the database)
-$filePaths = Get-FilesToCheck -DatabaseConnection $databaseConnection
+# Get the current date in seconds since epoch
+current_date=$(date +%s)
 
-# Loop through each file and check its integrity (replace this with your actual file integrity check logic)
-foreach ($filePath in $filePaths) {
-    $fileIntegrityStatus = Check-FileIntegrity -Path $filePath
+# Calculate the date one week ago in seconds since epoch
+one_week_ago=$((current_date - (7 * 24 * 3600)))
 
-    # Output the result
-    Write-Host "File '$filePath' integrity check result: $fileIntegrityStatus"
-}
+# Loop through each file in the specified directory
+for file in "$directory_path"/*; do
+    # Get the last modification time of the file in seconds since epoch
+    last_modified=$(stat -c %Y "$file")
 
-# Close the database connection (replace with your actual logic to close the connection)
-Disconnect-Database -Connection $databaseConnection
+    # Check if the file has been modified within the past week
+    if ((last_modified >= one_week_ago)); then
+        echo "$file has been modified within the past week."
+    else
+        echo "$file has not been modified within the past week."
+    fi
+done
+
+Replace "/path/to/your/directory" with the actual path to the directory you want to check. This script uses the `stat` command to get the last modification time of each file and compares it with the time one week ago.
+
+Save this script with a ".sh" extension, make it executable (`chmod +x script.sh`), and then execute it in the terminal. This script assumes you have the necessary permissions to read the files in the specified directory.
