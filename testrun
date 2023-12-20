@@ -1,1 +1,5 @@
-
+#!/bin/bash
+//This is a sample script
+echo "Hello, What is your name" 
+//To use this download it and issue the command chmod 777 filename
+//Then at the $ prompt type:./filename
