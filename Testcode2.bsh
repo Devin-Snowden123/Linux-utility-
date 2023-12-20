@@ -1,4 +1,4 @@
-#!/bin/hash/
+#!/bin/hash
 #This is a test script
 echo "Enter a numner"
 read a 
