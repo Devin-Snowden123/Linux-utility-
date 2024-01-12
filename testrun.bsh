@@ -1,6 +1,7 @@
 #!/bin/bash
 #This is a sample script
 echo "Hello, What is your name, How has your day been?" 
-echo "what is your birthday" 
+echo "what is your birthday" \
+echo "Hello"
 #To use this download it and issue the command chmod 777 filename
 #Then at the $ prompt type:./filename
