@@ -1,6 +1,6 @@
 #!/bin/bash
 #This is a sample script
 echo "Hello, What is your name, How has your day been?"  
-echo "When is your birthday? My birthday is february 14"
+echo "When is your birthday? My birthday is february 14" \
 #To use this download it and issue the command chmod 777 filename
 #Then at the $ prompt type:./filename
